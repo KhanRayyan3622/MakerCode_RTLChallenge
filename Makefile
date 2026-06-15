@@ -92,12 +92,6 @@ sim:
 	    dutsv="$$src" ;;       # SystemVerilog/Verilog: compile the source directly
 	esac
 
-	# ---- waveform helper for testbenches that have no $dumpfile of their own -
-	dumpsrc=""; dumproot=""
-	if ! grep -q "dumpfile" "$(QDIR)/tb.sv" && [ -f vcd_dump.sv ]; then
-	  dumpsrc="vcd_dump.sv"; dumproot="-s __vcd_dump"
-	fi
-
 	# iverilog -P needs a decimal, so convert Verilog literals (4'b1011, 8'hFF).
 	to_dec () {
 	  local v="$${1//_/}"
@@ -120,8 +114,8 @@ sim:
 	  local n="$$1" pf="$$2"
 	  local out="$(QDIR)/sim_$$n.out" vcd="$(QDIR)/test_$$n.vcd"
 	  local log="$(QDIR)/sim_$$n.log" clog="$(QDIR)/compile_$$n.log"
-	  if ! $(IVERILOG) -g2012 -s tb $$dumproot -I "$(QDIR)" $$pf \
-	       -o "$$out" "$(QDIR)/tb.sv" "$$dutsv" $$dumpsrc 2> "$$clog"; then
+	  if ! $(IVERILOG) -g2012 -s tb -I "$(QDIR)" $$pf \
+	       -o "$$out" "$(QDIR)/tb.sv" "$$dutsv" 2> "$$clog"; then
 	    echo "  test $$n: COMPILE ERROR  -> $$clog"; FAIL=$$((FAIL+1)); return
 	  fi
 	  $(VVP) "$$out" +VCDFILE="$$vcd" > "$$log" 2>&1 || true
@@ -155,6 +149,16 @@ sim:
 	fi
 
 	echo ">> done: $$PASS passed, $$FAIL failed  (artifacts in $(QDIR)/)"
+
+	# Drop a per-language marker file so update_csv.py can record progress.
+	# All tests pass -> create PASS_<LANG>; any failure -> remove a stale one.
+	case "$$lang" in VHDL) tag=VHDL ;; TLV|TL-VERILOG) tag=TLV ;; *) tag=SV ;; esac
+	rm -f "$(QDIR)/PASS_$$tag"
+	if [ "$$FAIL" -eq 0 ]; then
+	  touch "$(QDIR)/PASS_$$tag"
+	  echo ">> marked $(QDIR)/PASS_$$tag"
+	fi
+
 	[ "$$FAIL" -eq 0 ]
 
 wave:

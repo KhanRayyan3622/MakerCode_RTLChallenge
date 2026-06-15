@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="asset/MakerCode_RTLChallenge_logo.png" alt="MakerCode RTL Challenge" width="320">
+</p>
+
 # MakerCode RTL Challenge
 
 A collection of **101 self-contained digital-design (RTL) challenges** you can
@@ -95,8 +99,8 @@ them out of version control.
 ```
 .
 ├── Makefile               # the offline test runner (make sim / wave / clean)
-├── vcd_dump.sv            # waveform helper used by the Makefile (do not edit)
-├── rtl_challenge_db.csv   # index of all challenges (id, title, difficulty)
+├── update_csv.py          # records your per-language progress into the CSV
+├── rtl_challenge_db.csv   # challenge index + your progress (SV/VHDL/TLV columns)
 ├── README.md              # this file
 └── 0000 ... 0100/         # one folder per challenge
     ├── question.md        # the problem description (read this first)
@@ -105,7 +109,9 @@ them out of version control.
     ├── interface.tlv      # TL-Verilog template             <-- or this
     ├── tb.sv              # the testbench (do NOT edit)
     ├── input_vector.txt   # parameter sets the testbench is run with
-    └── solution.sv        # reference answer (try before you peek!)
+    ├── solution.sv        # reference answer, SystemVerilog (try before you peek!)
+    ├── solution.vhdl      # reference answer, VHDL  (placeholder / WIP)
+    └── solution.tlv       # reference answer, TL-Verilog  (placeholder / WIP)
 ```
 
 ### File meanings
@@ -121,8 +127,32 @@ them out of version control.
   has no parameters, this file may be absent and a single run uses the defaults.
 - **`solution.sv`** — a working reference implementation, so you can compare or
   unblock yourself. Run it with `make sim QUESTION=n DUT=solution.sv`.
+  (`solution.vhdl` / `solution.tlv` are placeholders for now.)
 - **`question.md`** — the spec: interface, behaviour, and a worked example
   (often with a WaveDrom timing diagram).
+- **`update_csv.py`** — records your progress into the CSV (see below).
+
+---
+
+## Track your progress
+
+When **all tests pass**, `make sim` drops a marker file in that question's folder
+named `PASS_SV`, `PASS_VHDL`, or `PASS_TLV` (depending on `LANGUAGE`). Then run:
+
+```bash
+python3 update_csv.py
+```
+
+to sweep every folder and fill the **`SV` / `VHDL` / `TLV`** columns of
+`rtl_challenge_db.csv` with `PASS` where you've solved it:
+
+```
+ID,Title,Difficulty,SV,VHDL,TLV
+0000,Simple 2-Input Parametizable Adder,Easy,PASS,,
+```
+
+Re-run it any time to refresh. Marker files are git-ignored — they're just your
+local progress.
 
 ---
 
