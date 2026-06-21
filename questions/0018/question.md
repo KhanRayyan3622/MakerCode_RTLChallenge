@@ -1,4 +1,4 @@
-# Parametizable Binary to One-Hot Encoder
+# Parameterizable Binary to One-Hot Encoder
 
 ## Problem Statement
 
@@ -24,7 +24,7 @@ Design a parametizable binary-to-one-hot encoder that converts a binary input to
 ### Functional Requirements
 
 1. **Binary to One-Hot Conversion**: Convert binary input to one-hot encoded output
-2. **Parametizable Width**: Support different input/output widths through parameters
+2. **Parameterizable Width**: Support different input/output widths through parameters
 3. **Combinational Logic**: Pure combinational implementation (no clock required)
 4. **One-Hot Encoding**: Only one bit should be high in the output
 5. **Valid Range**: Input values should be within valid range (0 to 2^BIN_W - 1)

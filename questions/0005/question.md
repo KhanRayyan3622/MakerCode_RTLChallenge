@@ -1,4 +1,4 @@
-# Parametizable Sequence Pattern Detector
+# Parameterizable Sequence Pattern Detector
 
 ## Problem Statement
 

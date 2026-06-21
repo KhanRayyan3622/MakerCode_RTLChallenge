@@ -1,4 +1,4 @@
-# Parametizable Binary to Gray Code Converter
+# Parameterizable Binary to Gray Code Converter
 
 ## Problem Statement
 
@@ -23,7 +23,7 @@ Design a parametizable binary-to-Gray code converter that converts standard bina
 ### Functional Requirements
 
 1. **Binary to Gray Conversion**: Convert standard binary to Gray code
-2. **Parametizable Width**: Support different word widths through parameter
+2. **Parameterizable Width**: Support different word widths through parameter
 3. **Combinational Logic**: Pure combinational implementation (no clock required)
 4. **Single Bit Change**: Gray code ensures only one bit changes between consecutive values
 5. **Reflective Property**: Gray code exhibits reflective symmetry

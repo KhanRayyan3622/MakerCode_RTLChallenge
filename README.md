@@ -154,7 +154,7 @@ to sweep every folder and fill the **`SV` / `VHDL` / `TLV`** columns of
 
 ```
 ID,Title,Difficulty,SV,VHDL,TLV
-0000,Simple 2-Input Parametizable Adder,Easy,PASS,,
+0000,Simple 2-Input Parameterizable Adder,Easy,PASS,,
 ```
 
 Re-run it any time to refresh. Marker files are git-ignored — they're just your
@@ -177,14 +177,14 @@ local progress.
 
 | ID | Title | Difficulty |
 |----|-------|------------|
-| 0000 | Simple 2-Input Parametizable Adder | Easy |
-| 0001 | Simple 2-Input Parametizable Subtractor | Easy |
-| 0002 | Simple 2-Input Parametizable Multiplier | Easy |
+| 0000 | Simple 2-Input Parameterizable Adder | Easy |
+| 0001 | Simple 2-Input Parameterizable Subtractor | Easy |
+| 0002 | Simple 2-Input Parameterizable Multiplier | Easy |
 | 0003 | Ring Counter | Easy |
 | 0004 | Ripple Counter | Easy |
-| 0005 | Parametizable Sequence Pattern Detector | Medium |
+| 0005 | Parameterizable Sequence Pattern Detector | Medium |
 | 0006 | Dual Edge Flip Flop | Hard |
-| 0007 | Parametizable Mux | Medium |
+| 0007 | Parameterizable Mux | Medium |
 | 0008 | D flip-flop | Easy |
 | 0009 | Dual Edge Detector | Easy |
 | 0010 | Simple ALU | Easy |
@@ -195,7 +195,7 @@ local progress.
 | 0015 | Binary to Grey | Easy |
 | 0016 | Self reloading counter | Easy |
 | 0017 | PISO Parallel in Serial out | Easy |
-| 0018 | Parametizable Binary to One-Hot Encoder | Easy |
+| 0018 | Parameterizable Binary to One-Hot Encoder | Easy |
 | 0019 | Priority Encoder | Easy |
 | 0020 | Fixed Priority Arbiter | Medium |
 | 0021 | Round Robin Arbiter | Medium |

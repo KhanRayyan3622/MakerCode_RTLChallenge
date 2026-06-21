@@ -1,4 +1,4 @@
-# Parametizable Synchronous FIFO
+# Parameterizable Synchronous FIFO
 
 ## Problem Statement
 

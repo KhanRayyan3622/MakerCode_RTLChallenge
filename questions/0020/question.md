@@ -1,4 +1,4 @@
-# Parametizable Priority Arbiter
+# Parameterizable Priority Arbiter
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ Design a parametizable priority arbiter that grants access to the highest priori
 1. **Priority-Based Arbitration**: Lower-indexed ports have higher priority (port[0] > port[1] > port[2] > ...)
 2. **One-Hot Grant**: Only one grant signal can be asserted at any time
 3. **Immediate Response**: Combinational logic providing immediate grant based on current requests
-4. **Parametizable Width**: Support different numbers of ports through parameter
+4. **Parameterizable Width**: Support different numbers of ports through parameter
 5. **No Grant When No Request**: When no requests are active, no grants should be asserted
 
 ### Example Operation
