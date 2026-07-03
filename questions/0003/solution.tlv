@@ -8,14 +8,7 @@ module ring_counter #(
     output wire [COUNTER_WIDTH-1:0] count_out
 );
 \TLV
-   \SV_plus
-      reg [COUNTER_WIDTH-1:0] count_reg;
-      always @(posedge clk or negedge rst_n) begin
-         if (!rst_n)
-            count_reg <= {{(COUNTER_WIDTH-1){1'b0}}, 1'b1};
-         else
-            count_reg <= {count_reg[COUNTER_WIDTH-2:0], count_reg[COUNTER_WIDTH-1]};
-      end
-      assign count_out = count_reg;
+   $count_out[COUNTER_WIDTH-1:0] = ! *rst_n ? 1 : {>>1$count_out[COUNTER_WIDTH-2:0], >>1$count_out[COUNTER_WIDTH-1]};
+   *count_out = >>1$count_out;
 \SV
 endmodule
