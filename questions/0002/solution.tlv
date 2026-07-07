@@ -8,7 +8,7 @@ module multiplier #(
     output wire [2*INPUT_WIDTH-1:0] data_out
 );
 \TLV
-   \SV_plus
-      assign data_out = data_in_1 * data_in_2;
+   $data_out[2 * INPUT_WIDTH - 1 : 0] = *data_in_1 * *data_in_2;
+   *data_out = $data_out;
 \SV
 endmodule
