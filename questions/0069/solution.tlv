@@ -15,8 +15,6 @@ module palindrome_check #(
     output reg                   out_valid,
     output reg                   out_is_palindrome
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 

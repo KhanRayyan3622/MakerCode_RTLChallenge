@@ -15,8 +15,6 @@ module matrix_transpose #(
     output reg  [DATA_WIDTH-1:0] out_data,
     output reg                   out_last
 );
-\TLV
-   \SV_plus
 
           localparam TOTAL_SIZE = MATRIX_SIZE * MATRIX_SIZE;
           localparam IDX_WIDTH = $clog2(TOTAL_SIZE + 1);

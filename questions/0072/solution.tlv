@@ -15,8 +15,6 @@ module dup_detect #(
     output reg                   out_valid,
     output reg                   out_has_dup
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 

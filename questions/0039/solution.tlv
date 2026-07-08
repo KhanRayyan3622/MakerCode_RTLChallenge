@@ -17,8 +17,6 @@ module traffic_light_controller #(
     output wire        ew_yellow,
     output wire        ew_green
 );
-\TLV
-   \SV_plus
       localparam GREEN_CYCLES  = CLK_FREQ * GREEN_TIME_SEC;
       localparam YELLOW_CYCLES = CLK_FREQ * YELLOW_TIME_SEC;
       localparam RED_CYCLES    = CLK_FREQ * RED_TIME_SEC;

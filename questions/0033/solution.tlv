@@ -16,8 +16,6 @@ module async_fifo #(
     output wire [DATA_WIDTH-1:0]     rd_data,
     output wire                      rd_empty
 );
-\TLV
-   \SV_plus
       // your implementation here
 
           localparam ADDR_WIDTH = $clog2(FIFO_DEPTH);

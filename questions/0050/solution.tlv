@@ -11,8 +11,6 @@ module decimation_filter #(
     output wire signed [DATA_WIDTH-1:0]    data_out,
     output wire                       data_valid_out
 );
-\TLV
-   \SV_plus
 
           localparam COUNTER_WIDTH = $clog2(DECIMATION_FACTOR);
 

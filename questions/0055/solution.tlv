@@ -19,8 +19,6 @@ module mem_arbiter #(
     output wire [NUM_MASTERS*DATA_WIDTH-1:0] gnt_rdata,
     output reg  [NUM_MASTERS-1:0]            gnt_rvalid
 );
-\TLV
-   \SV_plus
 
           // Internal signals for memory interface
           reg                   mem_req;

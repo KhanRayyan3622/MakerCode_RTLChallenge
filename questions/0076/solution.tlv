@@ -13,8 +13,6 @@ module diff_calc #(
     output reg                   out_valid,
     output reg signed [DATA_WIDTH:0] out_diff
 );
-\TLV
-   \SV_plus
 
           reg [DATA_WIDTH-1:0] prev_value;
           reg has_prev;

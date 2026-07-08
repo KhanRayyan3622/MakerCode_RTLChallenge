@@ -15,8 +15,6 @@ module median_calc #(
     output reg                   out_valid,
     output reg  [DATA_WIDTH-1:0] out_median
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 

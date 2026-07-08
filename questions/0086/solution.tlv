@@ -13,8 +13,6 @@ module hamming_dist #(
     output wire                           out_valid,
     output wire [$clog2(DATA_WIDTH+1)-1:0] out_dist
 );
-\TLV
-   \SV_plus
 
           localparam DIST_WIDTH = $clog2(DATA_WIDTH + 1);
 

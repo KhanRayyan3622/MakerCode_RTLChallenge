@@ -12,8 +12,6 @@ module trailing_zero #(
     output wire                            out_valid,
     output wire [$clog2(DATA_WIDTH+1)-1:0] out_count
 );
-\TLV
-   \SV_plus
 
           localparam COUNT_WIDTH = $clog2(DATA_WIDTH + 1);
 

@@ -9,8 +9,6 @@ module debounce #(
     input  wire        button_in,
     output wire        button_out
 );
-\TLV
-   \SV_plus
       localparam DEBOUNCE_CYCLES = (CLK_FREQ * DEBOUNCE_TIME_MS) / 1000;
       localparam COUNTER_WIDTH = $clog2(DEBOUNCE_CYCLES + 1);
 

@@ -19,8 +19,6 @@ module conv_1d #(
     output reg  [DATA_WIDTH*2+$clog2(KERNEL_SIZE)-1:0] out_data,
     output reg                   out_last
 );
-\TLV
-   \SV_plus
 
           localparam OUT_WIDTH = DATA_WIDTH * 2 + $clog2(KERNEL_SIZE);
           localparam CNT_WIDTH = $clog2(KERNEL_SIZE + 1);

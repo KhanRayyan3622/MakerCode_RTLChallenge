@@ -16,8 +16,6 @@ module bubble_sort #(
     output reg  [DATA_WIDTH-1:0] out_data,
     output reg                   out_last
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 

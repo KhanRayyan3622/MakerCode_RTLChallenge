@@ -12,8 +12,6 @@ module lut_interpolator #(
     output reg                            done,
     output reg  [DATA_WIDTH-1:0]          result
 );
-\TLV
-   \SV_plus
 
           // Internal signals for ROM interface
           reg                   rom_rd_en;

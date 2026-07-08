@@ -17,8 +17,6 @@ module binary_search #(
     output reg                   out_found,
     output reg  [7:0]            out_index
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 

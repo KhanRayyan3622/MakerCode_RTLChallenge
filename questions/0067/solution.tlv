@@ -14,8 +14,6 @@ module moving_max #(
     output reg                   out_valid,
     output reg  [DATA_WIDTH-1:0] out_max
 );
-\TLV
-   \SV_plus
 
           localparam PTR_WIDTH = $clog2(WINDOW_SIZE);
           localparam CNT_WIDTH = $clog2(WINDOW_SIZE + 1);

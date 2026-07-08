@@ -18,8 +18,6 @@ module two_sum #(
     output reg  [7:0]            out_idx1,
     output reg  [7:0]            out_idx2
 );
-\TLV
-   \SV_plus
 
           localparam IDX_WIDTH = $clog2(MAX_SIZE + 1);
 
